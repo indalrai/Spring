@@ -56,9 +56,9 @@ public class VisitorServiceImpl implements VisitorService {
 	@Override
 	public void deleteVisitor(long id) throws ResourceNotFoundException {
 
-		visitorRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("ID NOT FOUND PLEASE CHECK"));
+		visitorRepository.findById( id).orElseThrow(() -> new ResourceNotFoundException("ID NOT FOUND PLEASE CHECK"));
 
-		visitorRepository.deleteById(id);
+		visitorRepository.deleteById( id);
 
 	}
 

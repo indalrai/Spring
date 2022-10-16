@@ -12,7 +12,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 
 import lombok.Data;
 
@@ -36,10 +35,10 @@ public class Visitor {
 
 	@Column(name = "mobile_number", nullable = false)
 	@Pattern(regexp = "^\\d{10}$" ,message = "inviled phone no")
-	@Size(min = 10, max = 10)
 	public String mobileNumber;
 
-	@Email(regexp = "[a-z0-9._%+-]+@[gmail.com]")
+	@Column(name = "email_id", nullable = false)
+	@Email(regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}", flags = Pattern.Flag.CASE_INSENSITIVE)
 	public String emailId;
 
 	
